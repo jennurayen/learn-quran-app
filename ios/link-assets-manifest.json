@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AmiriR.ttf",
+      "sha1": "2786429533bb211f68ba50c7a6d705620f048d78"
+    },
+    {
+      "path": "assets/fonts/Hafs.ttf",
+      "sha1": "44947ac5accc8ff55df56a67ebdac34451c482fe"
+    },
+    {
+      "path": "assets/fonts/IndoPak.ttf",
+      "sha1": "dc817e0d16c1882ab108c47bbaadb1bd64f3b49c"
+    }
+  ]
+}
