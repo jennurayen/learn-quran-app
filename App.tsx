@@ -1,55 +1,51 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {StyleSheet} from 'react-native';
+import NavigationStack from './page/NavigationStack';
 
-// icons
 
 
-//Navigation
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//page
-import Home from './page/Home';
-import Quran from './page/Quran';
-import Web from './page/Web';
-// svg
-import HomeSvg from './assets/svg/HomeSvg';
-import QuranSvg from './assets/svg/QuranSvg';
-import WorldSvg from './assets/svg/WorldSvg';
 
-const Tab = createBottomTabNavigator();
+import Feed from './page/Feed';
+import Messages from './page/Messages';
+import Profile from './page/Profile';
+import Settings from './page/Settings';
+
+const Stack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator()
 
 
-const App = () => {
+
+
+
+// function Home() {
+//   return (
+//     <Tab.Navigator>
+//       <Tab.Screen name="Feed" component={Feed} />
+//       <Tab.Screen name="Messages" component={Messages} />
+//     </Tab.Navigator>
+//   );
+// }
+
+function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator 
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarIcon: ({ focused }) => { 
-         
-          if (route.name === 'Home') {
-             return focused ? <HomeSvg fill='tomato'/>: <HomeSvg />
-          }
-           else if (route.name === 'Quran') {
-            return focused ?  <QuranSvg fill='tomato'/> : <QuranSvg />
-          }
-           else if (route.name === 'Web') {
-            return focused ?  <WorldSvg fill='tomato'/>: <WorldSvg />
-          }
-        },
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
-        
-      })}
-      >
-      <Tab.Screen name="Home" component={Home} options={{}}/>
-      <Tab.Screen name="Quran" component={Quran} />
-      <Tab.Screen name="Web" component={Web} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  )
+    <NavigationStack/>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen
+    //       name="Home"
+    //       component={Home}
+    //       options={{ headerShown: false }}
+    //     />
+    //     <Stack.Screen name="Profile" component={Profile} />
+    //     <Stack.Screen name="Settings" component={Settings} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+  );
 }
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

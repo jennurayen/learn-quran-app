@@ -1,12 +1,14 @@
-import {StyleSheet, Text, View, FlatList, TouchableOpacity, Alert} from 'react-native';
-import React, {useEffect} from 'react';
+import {StyleSheet, Text, View, FlatList, TouchableOpacity, Modal} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import ListOfSura from '../data/ListOfSura';
 import MenuDotSvg from '../assets/svg/MenuDotSvg';
 
 const Quran = () => {
 
+  const [isModalShow, setIsModalShow] = useState(false)
+
   function openMenuModal() {
-    Alert.alert('Open Menu')
+    setIsModalShow(!isModalShow)
   }
 
 
@@ -32,6 +34,19 @@ const Quran = () => {
     <View style={styles.header}>
       <Text style={styles.headerText}>Al-Quran Bengali</Text>
       <TouchableOpacity onPress={openMenuModal} style={styles.menuIcon}><MenuDotSvg/></TouchableOpacity>
+      {/* Modal */}
+      <Modal transparent={true} visible={isModalShow} animationType='fade' >
+        <View style={styles.modalView}>
+        <View style={styles.modalBox}>
+          <View>
+            <Text style={styles.Text}>Modal</Text>
+          </View>
+
+          <TouchableOpacity onPress={openMenuModal} ><Text style={styles.modalCancelBtn}>Cancel</Text></TouchableOpacity>
+        </View>
+        </View>
+      </Modal>
+
     </View>
   );
 
@@ -120,4 +135,29 @@ const styles = StyleSheet.create({
     lineHeight: 50,
     letterSpacing: -10,
   },
+  modalView: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalBox: {
+    padding: 20,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 0.5,
+    borderColor: 'gray',
+  },
+  modalCancelBtn: {
+    backgroundColor: 'tomato',
+    padding: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    color: 'white',
+  }
 });
