@@ -1,16 +1,16 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Home = ({navigation}) => {
+const HomeButtomTab = ({navigation}) => {
   return (
     <View>
+       {/* <Button
+        title="For Nested Navigation"
+        onPress={() => navigation.navigate('QuranSura', { screen: 'SuraDetails' })}
+      /> */}
        <Button
-        title="Go to Details..."
-        onPress={() => navigation.navigate('QuranSura')}
-      />
-       <Button
-        title="Go to One Top Tab"
-        onPress={() => navigation.navigate('QuranSura', { screen: '111' })}
+        title="show details..."
+        onPress={() => navigation.navigate('SuraDetails')}
       />
       <Text>Home2</Text>
       <Text style={{fontFamily: 'AmiriR', fontSize: 33}}>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"</Text>
@@ -20,6 +20,6 @@ const Home = ({navigation}) => {
   )
 }
 
-export default Home
+export default HomeButtomTab
 
 const styles = StyleSheet.create({})

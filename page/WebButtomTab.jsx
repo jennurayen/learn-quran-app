@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Web = () => {
+const WebButtomTab = () => {
   return (
     <View>
       <Text>Web</Text>
@@ -9,6 +9,6 @@ const Web = () => {
   )
 }
 
-export default Web
+export default WebButtomTab
 
 const styles = StyleSheet.create({})

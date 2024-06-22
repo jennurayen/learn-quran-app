@@ -2,8 +2,9 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 //page
-import QuranSura from './QuranSura';
-import NavigationTab from './NavigationTab';
+import TopTab from './TopTab';
+import NavigationButtomTab from './NavigationButtomTab';
+import SuraDetails from './SuraDetails';
 
 //Navigation
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,8 +19,9 @@ const NavigationStack = () => {
     <NavigationContainer>
       <Stack.Navigator >
         
-        <Stack.Screen name="QuranSura" component={QuranSura} options={{headerShown: false}}/>
-        <Stack.Screen name="TabButtomPage" component={NavigationTab} options={{headerShown: false}} />
+        {/* <Stack.Screen name="QuranSura" component={TopTab} options={{headerShown: false}}/> */}
+        <Stack.Screen name="TabButtomPage" component={NavigationButtomTab} options={{headerShown: false}} />
+        <Stack.Screen name="SuraDetails" component={SuraDetails} options={{headerShown: false}}/>
         
       </Stack.Navigator>
     </NavigationContainer>

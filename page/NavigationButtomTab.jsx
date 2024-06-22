@@ -4,9 +4,9 @@ import {StyleSheet} from 'react-native';
 //Navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 //page
-import Home from './Home';
-import Quran from './Quran';
-import Web from './Web';
+import HomeButtomTab from './HomeButtomTab';
+import QuranButtomTab from './QuranButtomTab';
+import WebButtomTab from './WebButtomTab';
 // svg
 import HomeSvg from '../assets/svg/HomeSvg';
 import QuranSvg from '../assets/svg/QuranSvg';
@@ -14,7 +14,7 @@ import WorldSvg from '../assets/svg/WorldSvg';
 
 const Tab = createBottomTabNavigator();
 
-const NavigationTab = () => {
+const NavigationButtomTab = () => {
   return (
     
       <Tab.Navigator
@@ -33,15 +33,15 @@ const NavigationTab = () => {
           tabBarInactiveTintColor: 'gray',
         })}
         >
-        <Tab.Screen name="Quran" component={Quran} />
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Web" component={Web} />
+        <Tab.Screen name="Quran" component={QuranButtomTab} />
+        <Tab.Screen name="Home" component={HomeButtomTab} />
+        <Tab.Screen name="Web" component={WebButtomTab} />
       </Tab.Navigator>
 
     
   );
 };
 
-export default NavigationTab;
+export default NavigationButtomTab;
 
 const styles = StyleSheet.create({});
